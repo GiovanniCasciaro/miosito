@@ -80,3 +80,4 @@ Per istruzioni dettagliate e altre opzioni, consulta **GUIDA-PUBBLICAZIONE.md**
 
 © 2024 GC Digital Designs. Tutti i diritti riservati.
 
+# gc-digital-designs
