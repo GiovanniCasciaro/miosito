@@ -52,20 +52,27 @@ Assicurati di avere questi file nella cartella del progetto:
 
 ## 📋 Opzione 3: Vercel (Alternativa moderna)
 
-### Passo 1: Crea account
+### Metodo A: Deploy Manuale (Veloce)
 1. Vai su: **https://vercel.com**
 2. Registrati (puoi usare GitHub, GitLab o Email)
+3. Clicca su "Add New Project"
+4. Scegli "Deploy" → "Browse" o trascina la cartella
+5. Clicca "Deploy"
 
-### Passo 2: Deploy
-1. Clicca su "Add New Project"
-2. Scegli "Import Git Repository" oppure "Deploy" → "Browse"
-3. Seleziona la cartella del progetto
-4. Clicca "Deploy"
+### Metodo B: Deploy con Git (Raccomandato - Deploy Automatico)
+**Vedi la guida completa: `GUIDA-VERCEL-GIT.md`**
+
+In sintesi:
+1. Crea repository su GitHub
+2. Fai push del codice
+3. Collega repository a Vercel
+4. Ogni push su `main` = deploy automatico! 🚀
 
 ### Vantaggi:
 - ✅ Velocità elevata
 - ✅ URL personalizzato
 - ✅ SSL automatico
+- ✅ Deploy automatico con Git
 
 ---
 

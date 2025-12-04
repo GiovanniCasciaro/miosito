@@ -79,4 +79,3 @@ Per istruzioni dettagliate e altre opzioni, consulta **GUIDA-PUBBLICAZIONE.md**
 ## Licenza
 
 © 2024 GC Digital Designs. Tutti i diritti riservati.
-
