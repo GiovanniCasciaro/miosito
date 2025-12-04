@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GC Digital Designs - Sviluppo Web Professionale e IT Consulting. Creiamo siti web moderni e soluzioni IT su misura per la tua azienda.">
+    <title>GC Digital Designs - Web Development & IT Consulting</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo">GC Digital Designs</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#servizi" class="nav-link">Servizi</a></li>
+                <li><a href="#chi-siamo" class="nav-link">Chi Siamo</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#contatti" class="nav-link">Contatti</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line">Trasformiamo le tue</span>
+                    <span class="title-line highlight">idee digitali</span>
+                    <span class="title-line">in realtà</span>
+                </h1>
+                <p class="hero-subtitle">Sviluppo web professionale e consulenza IT per far crescere la tua attività nel mondo digitale</p>
+                <div class="hero-buttons">
+                    <a href="#contatti" class="btn btn-primary">Inizia Oggi</a>
+                    <a href="#servizi" class="btn btn-secondary">I Nostri Servizi</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <div class="card-icon">💻</div>
+                    <div class="card-text">Web Design</div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon">⚡</div>
+                    <div class="card-text">Performance</div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon">🔒</div>
+                    <div class="card-text">Sicurezza</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servizi Section -->
+    <section id="servizi" class="servizi">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Servizi</span>
+                <h2 class="section-title">Cosa Offriamo</h2>
+                <p class="section-description">Soluzioni complete per il tuo business digitale</p>
+            </div>
+            <div class="servizi-grid">
+                <div class="servizio-card" data-aos="fade-up">
+                    <div class="servizio-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3>Sviluppo Web</h3>
+                    <p>Creiamo siti web moderni, responsive e ottimizzati per ogni dispositivo. Design personalizzato e codice pulito.</p>
+                    <ul class="servizio-features">
+                        <li>Design Responsive</li>
+                        <li>Ottimizzazione SEO</li>
+                        <li>Performance Elevate</li>
+                        <li>Manutenzione Continua</li>
+                    </ul>
+                </div>
+                <div class="servizio-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="servizio-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3>IT Consulting</h3>
+                    <p>Consulenza strategica per ottimizzare la tua infrastruttura IT e migliorare i processi aziendali.</p>
+                    <ul class="servizio-features">
+                        <li>Analisi Infrastruttura</li>
+                        <li>Pianificazione Strategica</li>
+                        <li>Migrazione Cloud</li>
+                        <li>Supporto Tecnico</li>
+                    </ul>
+                </div>
+                <div class="servizio-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="servizio-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3>E-Commerce</h3>
+                    <p>Piattaforme e-commerce complete per vendere online con sicurezza e facilità di gestione.</p>
+                    <ul class="servizio-features">
+                        <li>Carrello Shopping</li>
+                        <li>Pagamenti Sicuri</li>
+                        <li>Gestione Inventario</li>
+                        <li>Analytics Integrati</li>
+                    </ul>
+                </div>
+                <div class="servizio-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="servizio-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></svg>
+                    </div>
+                    <h3>Ottimizzazione</h3>
+                    <p>Miglioriamo le performance del tuo sito esistente per velocità, SEO e conversione.</p>
+                    <ul class="servizio-features">
+                        <li>Velocità Caricamento</li>
+                        <li>SEO Avanzato</li>
+                        <li>Conversioni</li>
+                        <li>Analisi Dati</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chi Siamo Section -->
+    <section id="chi-siamo" class="chi-siamo">
+        <div class="container">
+            <div class="chi-siamo-content">
+                <div class="chi-siamo-text" data-aos="fade-right">
+                    <span class="section-tag">Chi Siamo</span>
+                    <h2 class="section-title">Esperti in Sviluppo Web e IT</h2>
+                    <p class="chi-siamo-description">
+                        GC Digital Designs è specializzata nella creazione di soluzioni web innovative e consulenza IT strategica. 
+                        Combiniamo creatività, tecnologia e competenza per offrire risultati che superano le aspettative.
+                    </p>
+                    <p class="chi-siamo-description">
+                        Il nostro approccio si basa sulla comprensione approfondita delle esigenze del cliente, 
+                        garantendo soluzioni su misura che guidano la crescita del business digitale.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="100">0</div>
+                            <div class="stat-label">Progetti Completati</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="50">0</div>
+                            <div class="stat-label">Clienti Soddisfatti</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="5">0</div>
+                            <div class="stat-label">Anni di Esperienza</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chi-siamo-visual" data-aos="fade-left">
+                    <div class="visual-card">
+                        <div class="card-glow"></div>
+                        <div class="code-snippet">
+                            <div class="code-line">
+                                <span class="code-keyword">const</span> 
+                                <span class="code-variable">digitalSolution</span> 
+                                <span class="code-operator">=</span> 
+                                <span class="code-function">create</span><span class="code-bracket">(</span>
+                            </div>
+                            <div class="code-line indent">
+                                <span class="code-property">innovation</span><span class="code-operator">:</span> 
+                                <span class="code-string">'cutting-edge'</span><span class="code-bracket">,</span>
+                            </div>
+                            <div class="code-line indent">
+                                <span class="code-property">quality</span><span class="code-operator">:</span> 
+                                <span class="code-string">'premium'</span><span class="code-bracket">,</span>
+                            </div>
+                            <div class="code-line indent">
+                                <span class="code-property">results</span><span class="code-operator">:</span> 
+                                <span class="code-string">'exceptional'</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="code-bracket">)</span><span class="code-operator">;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">I Nostri Progetti</h2>
+                <p class="section-description">Esempi del nostro lavoro</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-aos="zoom-in">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3>E-Commerce Moderno</h3>
+                            <p>Piattaforma completa con gestione ordini avanzata</p>
+                            <span class="portfolio-tag">E-Commerce</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3>Corporate Website</h3>
+                            <p>Sito aziendale responsive e performante</p>
+                            <span class="portfolio-tag">Corporate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3>Web App SaaS</h3>
+                            <p>Applicazione web per gestione progetti</p>
+                            <span class="portfolio-tag">SaaS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contatti Section -->
+    <section id="contatti" class="contatti">
+        <div class="container">
+            <div class="contatti-content">
+                <div class="contatti-info" data-aos="fade-right">
+                    <span class="section-tag">Contatti</span>
+                    <h2 class="section-title">Iniziamo un Progetto Insieme</h2>
+                    <p class="contatti-description">
+                        Siamo pronti a trasformare la tua visione in realtà digitale. 
+                        Contattaci per una consulenza gratuita e scopri come possiamo aiutare il tuo business.
+                    </p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@gcdigitaldesigns.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">📱</div>
+                            <div>
+                                <h4>Telefono</h4>
+                                <p>+39 000 000 0000</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h4>Indirizzo</h4>
+                                <p>Italia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" data-aos="fade-left" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Oggetto</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Messaggio</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Invia Messaggio</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>GC Digital Designs</h3>
+                    <p>Trasformiamo le idee in soluzioni digitali</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Link Rapidi</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#servizi">Servizi</a></li>
+                        <li><a href="#chi-siamo">Chi Siamo</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contatti">Contatti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Seguici</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">GitHub</a>
+                        <a href="#" class="social-link">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GC Digital Designs. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
