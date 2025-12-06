@@ -740,45 +740,48 @@ section {
     font-size: 0.875rem;
 }
 
-.contact-form {
-    background: var(--bg-secondary);
-    padding: 2.5rem;
-    border-radius: 1rem;
-    box-shadow: var(--shadow-md);
+.contatti-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
 }
 
-.form-group {
-    margin-bottom: 1.5rem;
+.btn-whatsapp {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: var(--text-primary);
+.btn-whatsapp:hover {
+    background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
 }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.875rem;
-    border: 2px solid var(--border-color);
-    border-radius: 0.5rem;
-    font-family: inherit;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    background: white;
+.btn-instagram {
+    background: linear-gradient(135deg, #E4405F 0%, #C13584 50%, #833AB4 100%);
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+.btn-instagram:hover {
+    background: linear-gradient(135deg, #833AB4 0%, #C13584 50%, #E4405F 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
 }
 
-.form-group textarea {
-    resize: vertical;
+.btn-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
 }
 
 /* Footer */
@@ -1014,9 +1017,12 @@ section {
         font-size: 1.75rem;
     }
 
-    .servizio-card,
-    .contact-form {
+    .servizio-card {
         padding: 1.5rem;
+    }
+    
+    .contatti-actions {
+        gap: 1rem;
     }
 }
 
