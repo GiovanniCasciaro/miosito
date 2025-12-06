@@ -747,33 +747,45 @@ section {
     justify-content: center;
 }
 
-.btn-whatsapp {
-    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-    color: white;
+.contatti-actions .btn {
+    width: 100%;
+    min-width: 200px;
+}
+
+.btn.btn-whatsapp,
+a.btn.btn-whatsapp {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+    color: white !important;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    border: none !important;
+    box-shadow: var(--shadow-md);
 }
 
-.btn-whatsapp:hover {
-    background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+.btn.btn-whatsapp:hover,
+a.btn.btn-whatsapp:hover {
+    background: linear-gradient(135deg, #128C7E 0%, #25D366 100%) !important;
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
 
-.btn-instagram {
-    background: linear-gradient(135deg, #E4405F 0%, #C13584 50%, #833AB4 100%);
-    color: white;
-    border: none;
+.btn.btn-instagram,
+a.btn.btn-instagram {
+    background: linear-gradient(135deg, #E4405F 0%, #C13584 50%, #833AB4 100%) !important;
+    color: white !important;
+    border: none !important;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    box-shadow: var(--shadow-md);
 }
 
-.btn-instagram:hover {
-    background: linear-gradient(135deg, #833AB4 0%, #C13584 50%, #E4405F 100%);
+.btn.btn-instagram:hover,
+a.btn.btn-instagram:hover {
+    background: linear-gradient(135deg, #833AB4 0%, #C13584 50%, #E4405F 100%) !important;
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
