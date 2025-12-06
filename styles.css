@@ -752,48 +752,85 @@ section {
     min-width: 200px;
 }
 
-.btn.btn-whatsapp,
-a.btn.btn-whatsapp {
-    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
-    color: white !important;
+/* WhatsApp Button - High specificity for Chrome compatibility */
+.contatti-actions .btn.btn-whatsapp,
+.contatti-actions a.btn.btn-whatsapp {
+    background: #25D366;
+    background: -webkit-linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: #ffffff;
+    display: -webkit-flex;
     display: flex;
+    -webkit-align-items: center;
     align-items: center;
+    -webkit-justify-content: center;
     justify-content: center;
     gap: 0.5rem;
-    border: none !important;
+    border: none;
+    border-width: 0;
+    border-style: none;
     box-shadow: var(--shadow-md);
+    -webkit-box-shadow: var(--shadow-md);
+    text-decoration: none;
 }
 
-.btn.btn-whatsapp:hover,
-a.btn.btn-whatsapp:hover {
-    background: linear-gradient(135deg, #128C7E 0%, #25D366 100%) !important;
+.contatti-actions .btn.btn-whatsapp:hover,
+.contatti-actions a.btn.btn-whatsapp:hover {
+    background: #128C7E;
+    background: -webkit-linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+    background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+    -webkit-transform: translateY(-2px);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+    -webkit-box-shadow: var(--shadow-lg);
 }
 
-.btn.btn-instagram,
-a.btn.btn-instagram {
-    background: linear-gradient(135deg, #E4405F 0%, #C13584 50%, #833AB4 100%) !important;
-    color: white !important;
-    border: none !important;
+/* Instagram Button - High specificity for Chrome compatibility */
+.contatti-actions .btn.btn-instagram,
+.contatti-actions a.btn.btn-instagram {
+    background: #E4405F;
+    background: -webkit-linear-gradient(135deg, #E4405F 0%, #C13584 50%, #833AB4 100%);
+    background: linear-gradient(135deg, #E4405F 0%, #C13584 50%, #833AB4 100%);
+    color: #ffffff;
+    border: none;
+    border-width: 0;
+    border-style: none;
+    display: -webkit-flex;
     display: flex;
+    -webkit-align-items: center;
     align-items: center;
+    -webkit-justify-content: center;
     justify-content: center;
     gap: 0.5rem;
     box-shadow: var(--shadow-md);
+    -webkit-box-shadow: var(--shadow-md);
+    text-decoration: none;
 }
 
-.btn.btn-instagram:hover,
-a.btn.btn-instagram:hover {
-    background: linear-gradient(135deg, #833AB4 0%, #C13584 50%, #E4405F 100%) !important;
+.contatti-actions .btn.btn-instagram:hover,
+.contatti-actions a.btn.btn-instagram:hover {
+    background: #833AB4;
+    background: -webkit-linear-gradient(135deg, #833AB4 0%, #C13584 50%, #E4405F 100%);
+    background: linear-gradient(135deg, #833AB4 0%, #C13584 50%, #E4405F 100%);
+    -webkit-transform: translateY(-2px);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+    -webkit-box-shadow: var(--shadow-lg);
 }
 
 .btn-icon {
     width: 20px;
     height: 20px;
+    min-width: 20px;
+    min-height: 20px;
     flex-shrink: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.contatti-actions .btn-icon {
+    fill: currentColor;
+    color: inherit;
 }
 
 /* Footer */
