@@ -6,20 +6,22 @@
 }
 
 :root {
-    /* Colori basati sul logo */
-    --primary-color: #1f1f1f;
-    --primary-dark: #1b1b1b;
-    --secondary-color: #46eb9b;
-    --accent-color: #46eb9b;
+    /* Colori basati sul logo blu */
+    --primary-color: #1e40af;
+    --primary-dark: #1e3a8a;
+    --secondary-color: #2563eb;
+    --accent-color: #3b82f6;
+    --blue-light: #60a5fa;
+    --blue-dark: #1e40af;
     --text-primary: #1f1f1f;
     --text-secondary: #686868;
     --bg-primary: #ffffff;
     --bg-secondary: #f9fafb;
     --bg-dark: #1f1f1f;
     --border-color: #e5e7eb;
-    --gradient-1: linear-gradient(135deg, #1f1f1f 0%, #46eb9b 100%);
-    --gradient-2: linear-gradient(135deg, #46eb9b 0%, #1b5135 100%);
-    --gradient-3: linear-gradient(135deg, #1f1f1f 0%, #686868 100%);
+    --gradient-1: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    --gradient-2: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+    --gradient-3: linear-gradient(135deg, #1e40af 0%, #60a5fa 100%);
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -66,6 +68,14 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 20px;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    display: block;
 }
 
 .logo {
@@ -561,7 +571,7 @@ section {
     right: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.3) 0%, transparent 70%);
     animation: rotate 20s linear infinite;
 }
 
@@ -1062,6 +1072,11 @@ section {
 @media (max-width: 480px) {
     .container {
         padding: 0 15px;
+    }
+
+    .logo-img {
+        height: 32px;
+        max-width: 150px;
     }
 
     .hero-title {
