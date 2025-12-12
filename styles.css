@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 :root {
     /* Colori basati sul logo blu */
     --primary-color: #1e40af;
@@ -30,6 +36,9 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 body {
@@ -38,12 +47,17 @@ body {
     background-color: var(--bg-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Navigation */
@@ -73,23 +87,41 @@ body {
 .nav-brand {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
     text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.nav-brand:hover {
+    transform: scale(1.02);
 }
 
 .nav-logo {
-    height: 40px;
+    height: 50px;
     width: auto;
-    max-width: 150px;
+    max-width: 180px;
     object-fit: contain;
     display: block;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    transition: filter 0.3s ease;
+}
+
+.nav-brand:hover .nav-logo {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
 }
 
 .nav-brand-text {
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: 1.4rem;
+    font-weight: 800;
     color: var(--primary-color);
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.nav-brand:hover .nav-brand-text {
+    color: var(--secondary-color);
 }
 
 .logo-img {
@@ -187,10 +219,20 @@ body {
     min-height: 100%;
     width: auto;
     height: auto;
+    max-width: none;
     transform: translate(-50%, -50%);
     object-fit: cover;
     z-index: 1;
     pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .hero-video {
+        width: 100%;
+        height: 100%;
+        min-width: 100vw;
+        min-height: 100vh;
+    }
 }
 
 .hero-overlay {
@@ -209,8 +251,10 @@ body {
     gap: 4rem;
     align-items: center;
     width: 100%;
+    max-width: 100%;
     position: relative;
     z-index: 3;
+    box-sizing: border-box;
 }
 
 .hero-content {
@@ -784,6 +828,8 @@ section {
     border-radius: 1rem;
     box-shadow: var(--shadow-md);
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .form-title {
@@ -810,6 +856,7 @@ section {
 .form-group select,
 .form-group textarea {
     width: 100%;
+    max-width: 100%;
     padding: 0.875rem;
     border: 2px solid var(--border-color);
     border-radius: 0.5rem;
@@ -1046,6 +1093,69 @@ section {
     font-size: 0.875rem;
 }
 
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-1);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    background: var(--gradient-2);
+}
+
+.back-to-top:active {
+    transform: translateY(-2px);
+}
+
+.back-to-top svg {
+    width: 24px;
+    height: 24px;
+    stroke: white;
+}
+
+@keyframes bounceUp {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.back-to-top.show {
+    animation: bounceUp 2s infinite ease-in-out;
+}
+
+.back-to-top:hover {
+    animation: none;
+    transform: translateY(-5px) !important;
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {
@@ -1104,6 +1214,7 @@ section {
     .hero .container {
         grid-template-columns: 1fr;
         text-align: center;
+        padding: 0 15px;
     }
 
     .hero-title {
@@ -1117,6 +1228,11 @@ section {
     .chi-siamo-content,
     .contatti-content {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contatti-content {
+        padding: 0;
     }
 
     .contatti-actions-desktop {
@@ -1138,6 +1254,21 @@ section {
 }
 
 @media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    * {
+        max-width: 100%;
+    }
+
+    img, video, iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
     .nav-menu {
         position: fixed;
         top: 70px;
@@ -1145,6 +1276,7 @@ section {
         flex-direction: column;
         background: white;
         width: 100%;
+        max-width: 100vw;
         text-align: center;
         transition: left 0.3s ease;
         box-shadow: var(--shadow-lg);
@@ -1173,10 +1305,18 @@ section {
 
     .hero-title {
         font-size: 2rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     .section-title {
         font-size: 2rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
     }
 
     .servizi-grid,
@@ -1200,18 +1340,35 @@ section {
 }
 
 @media (max-width: 480px) {
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+    }
+
     .container {
         padding: 0 15px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .navbar .container {
+        padding: 1rem 15px;
     }
 
     .nav-logo {
-        height: 32px;
-        max-width: 100px;
+        height: 40px;
+        max-width: 120px;
     }
 
     .nav-brand-text {
-        font-size: 0.875rem;
-        letter-spacing: 0.25px;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+    }
+
+    .nav-brand {
+        gap: 0.75rem;
     }
 
     .logo-img {
@@ -1221,10 +1378,24 @@ section {
 
     .hero-title {
         font-size: 1.75rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        line-height: 1.3;
     }
 
     .section-title {
         font-size: 1.75rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .contatti-content,
+    .chi-siamo-content {
+        gap: 1.5rem;
     }
 
     .servizio-card {
