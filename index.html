@@ -213,30 +213,11 @@
                 <p class="section-description">Esempi del nostro lavoro</p>
             </div>
             <div class="portfolio-grid">
-                <div class="portfolio-item" data-aos="zoom-in">
+                <div class="portfolio-item portfolio-coming-soon" data-aos="zoom-in">
                     <div class="portfolio-image">
                         <div class="portfolio-overlay">
-                            <h3>E-Commerce Moderno</h3>
-                            <p>Piattaforma completa con gestione ordini avanzata</p>
-                            <a href="https://prenotazioniscolopi.netlify.app" class="btn btn-primary">Vai al portale</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="portfolio-image">
-                        <div class="portfolio-overlay">
-                            <h3>Portale Prenotazioni</h3>
-                            <p>Per il tuo ristorante</p>
-                            <a href="https://prenotazioniscolopi.netlify.app" class="btn btn-primary">Vai al portale</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="portfolio-image">
-                        <div class="portfolio-overlay">
-                            <h3>Web App SaaS</h3>
-                            <p>Applicazione web per gestione progetti</p>
-                            <a href="https://prenotazioniscolopi.netlify.app" class="btn btn-primary">Vai al portale</a>
+                            <h3>Presto verranno aggiunti i nostri progetti</h3>
+                            <p>Stiamo lavorando per mostrarti i migliori esempi del nostro lavoro</p>
                         </div>
                     </div>
                 </div>
@@ -272,6 +253,34 @@
                         </div>
                     </div>
                 </div>
+                <form class="contact-form" id="preventivoForm" data-aos="fade-left">
+                    <h3 class="form-title">Richiedi un Preventivo</h3>
+                    <div class="form-group">
+                        <label for="nome">Nome *</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="servizio">Tipo di Servizio *</label>
+                        <select id="servizio" name="servizio" required>
+                            <option value="">Seleziona un servizio</option>
+                            <option value="sito-web">Sito Web</option>
+                            <option value="portali-gestionali">Portali Gestionali</option>
+                            <option value="e-commerce">E-Commerce</option>
+                            <option value="consulenza-informatica">Consulenza Informatica</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Numero di Telefono *</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="messaggio">Messaggio (max 500 caratteri) *</label>
+                        <textarea id="messaggio" name="messaggio" rows="5" maxlength="500" required></textarea>
+                        <span class="char-count"><span id="charCount">0</span>/500</span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Invia Richiesta</button>
+                    <div class="form-message" id="formMessage"></div>
+                </form>
                 <div class="contatti-actions" data-aos="fade-left">
                     <a href="https://wa.me/393208995599" target="_blank" class="btn btn-whatsapp">
                         <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">

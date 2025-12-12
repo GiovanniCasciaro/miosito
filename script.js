@@ -96,40 +96,113 @@ document.querySelectorAll('.stat-number').forEach(stat => {
     statsObserver.observe(stat);
 });
 
-// Form Submission Handler
-const contactForm = document.getElementById('contactForm');
+// Character counter for message textarea
+const messaggioTextarea = document.getElementById('messaggio');
+const charCount = document.getElementById('charCount');
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
-    
-    // Here you would typically send the data to a server
-    // For now, we'll just show a success message
-    const submitButton = contactForm.querySelector('button[type="submit"]');
-    const originalText = submitButton.textContent;
-    
-    submitButton.textContent = 'Invio in corso...';
-    submitButton.disabled = true;
-    
-    // Simulate form submission
-    setTimeout(() => {
-        submitButton.textContent = 'Messaggio Inviato! ✓';
-        submitButton.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+if (messaggioTextarea && charCount) {
+    messaggioTextarea.addEventListener('input', () => {
+        const length = messaggioTextarea.value.length;
+        charCount.textContent = length;
         
-        // Reset form
-        contactForm.reset();
+        if (length > 450) {
+            charCount.style.color = '#dc2626';
+        } else {
+            charCount.style.color = '';
+        }
+    });
+}
+
+// Form Submission Handler for Preventivo
+const preventivoForm = document.getElementById('preventivoForm');
+const formMessage = document.getElementById('formMessage');
+
+if (preventivoForm) {
+    preventivoForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
         
-        // Reset button after 3 seconds
-        setTimeout(() => {
+        const submitButton = preventivoForm.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        
+        // Hide previous messages
+        formMessage.className = 'form-message';
+        formMessage.style.display = 'none';
+        
+        // Disable submit button
+        submitButton.textContent = 'Invio in corso...';
+        submitButton.disabled = true;
+        
+        // Get form data
+        const formData = new FormData(preventivoForm);
+        const nome = formData.get('nome');
+        const servizio = formData.get('servizio');
+        const telefono = formData.get('telefono');
+        const messaggio = formData.get('messaggio');
+        
+        // Map servizio values to readable text
+        const servizioMap = {
+            'sito-web': 'Sito Web',
+            'portali-gestionali': 'Portali Gestionali',
+            'e-commerce': 'E-Commerce',
+            'consulenza-informatica': 'Consulenza Informatica'
+        };
+        
+        // Prepare data for Web3Forms
+        const emailData = {
+            access_key: '6f109015-4a7a-4c6d-a30f-ef47097407f1', // Sostituire con la chiave Web3Forms
+            subject: `Richiesta Preventivo - ${servizioMap[servizio] || servizio}`,
+            from_name: nome,
+            email: 'giovannicasciaro.dev@gmail.com', // Email di destinazione
+            nome: nome,
+            servizio: servizioMap[servizio] || servizio,
+            telefono: telefono,
+            messaggio: messaggio,
+            to: 'giovannicasciaro.dev@gmail.com'
+        };
+        
+        try {
+            // Invia email usando Web3Forms API
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(emailData)
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                // Show success message
+                formMessage.textContent = 'Richiesta inviata con successo! Ti risponderemo al più presto.';
+                formMessage.className = 'form-message success';
+                formMessage.style.display = 'block';
+                
+                // Reset form
+                preventivoForm.reset();
+                if (charCount) charCount.textContent = '0';
+                
+                // Reset button
+                setTimeout(() => {
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                }, 2000);
+            } else {
+                throw new Error(result.message || 'Errore nell\'invio');
+            }
+            
+        } catch (error) {
+            console.error('Errore invio email:', error);
+            formMessage.textContent = 'Errore nell\'invio. Riprova più tardi o contattaci direttamente via WhatsApp.';
+            formMessage.className = 'form-message error';
+            formMessage.style.display = 'block';
+            
             submitButton.textContent = originalText;
             submitButton.disabled = false;
-            submitButton.style.background = '';
-        }, 3000);
-    }, 1500);
-});
+        }
+    });
+}
 
 // Parallax Effect for Hero Section
 window.addEventListener('scroll', () => {
