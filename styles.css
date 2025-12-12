@@ -70,6 +70,28 @@ body {
     padding: 1rem 20px;
 }
 
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.nav-logo {
+    height: 40px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    display: block;
+}
+
+.nav-brand-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+}
+
 .logo-img {
     height: 40px;
     width: auto;
@@ -1180,6 +1202,16 @@ section {
 @media (max-width: 480px) {
     .container {
         padding: 0 15px;
+    }
+
+    .nav-logo {
+        height: 32px;
+        max-width: 100px;
+    }
+
+    .nav-brand-text {
+        font-size: 0.875rem;
+        letter-spacing: 0.25px;
     }
 
     .logo-img {
