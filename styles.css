@@ -1113,7 +1113,7 @@ section {
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
-    transition: all 0.8s ease;
+    transition: all 1.5s ease;
 }
 
 .back-to-top.show {
