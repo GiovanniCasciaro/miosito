@@ -845,7 +845,16 @@ section {
     flex-direction: column;
     gap: 1.5rem;
     justify-content: center;
+}
+
+.contatti-actions-desktop {
     margin-top: 2rem;
+    display: flex;
+}
+
+.contatti-actions-mobile {
+    margin-top: 2rem;
+    display: none;
 }
 
 .contatti-actions .btn {
@@ -1086,6 +1095,14 @@ section {
     .chi-siamo-content,
     .contatti-content {
         grid-template-columns: 1fr;
+    }
+
+    .contatti-actions-desktop {
+        display: none;
+    }
+
+    .contatti-actions-mobile {
+        display: flex;
     }
 
     .stats-grid {
