@@ -310,8 +310,22 @@ window.addEventListener('scroll', optimizedScrollHandler);
 // Recensioni Carousel
 const reviewCards = document.querySelectorAll('.review-card');
 const reviewDots = document.querySelectorAll('.review-dot');
+const reviewsCarousel = document.getElementById('reviewsCarousel');
 let currentReviewIndex = 0;
 let reviewInterval = null;
+
+function scrollActiveReviewIntoView(activeCard) {
+    if (!activeCard || !reviewsCarousel) return;
+
+    // Solo in modalità responsive/mobile ha senso forzare lo scroll
+    if (window.innerWidth <= 768) {
+        activeCard.scrollIntoView({
+            behavior: 'smooth',
+            inline: 'center',
+            block: 'nearest'
+        });
+    }
+}
 
 function setActiveReview(index) {
     if (!reviewCards.length) return;
@@ -325,7 +339,10 @@ function setActiveReview(index) {
     const activeCard = document.querySelector(`.review-card[data-index="${safeIndex}"]`);
     const activeDot = document.querySelector(`.review-dot[data-index="${safeIndex}"]`);
 
-    if (activeCard) activeCard.classList.add('active');
+    if (activeCard) {
+        activeCard.classList.add('active');
+        scrollActiveReviewIntoView(activeCard);
+    }
     if (activeDot) activeDot.classList.add('active');
 }
 
@@ -340,12 +357,23 @@ function startReviewCarousel() {
 }
 
 if (reviewCards.length) {
+    // Stato iniziale
     setActiveReview(0);
     startReviewCarousel();
 
+    // Click sui pallini di navigazione
     reviewDots.forEach(dot => {
         dot.addEventListener('click', () => {
             const index = parseInt(dot.getAttribute('data-index'));
+            setActiveReview(index);
+            startReviewCarousel();
+        });
+    });
+
+    // Click diretto sulle card
+    reviewCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const index = parseInt(card.getAttribute('data-index'));
             setActiveReview(index);
             startReviewCarousel();
         });

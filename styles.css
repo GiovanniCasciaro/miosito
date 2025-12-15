@@ -1584,6 +1584,23 @@ section {
         grid-template-columns: 1fr;
     }
 
+    /* Perché Sceglierci - Pillar in orizzontale su mobile */
+    .perche-pillars {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 0.5rem;
+    }
+
+    .perche-pillars .pillar {
+        min-width: 80%;
+        scroll-snap-align: start;
+        flex-shrink: 0;
+    }
+
     .stats-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
