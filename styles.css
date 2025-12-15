@@ -492,6 +492,120 @@ section {
     background: var(--bg-secondary);
 }
 
+/* Perché Sceglierci Section */
+.perche-sceglierci {
+    background: var(--bg-primary);
+}
+
+.perche-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 3rem;
+    align-items: stretch;
+}
+
+.perche-text .section-title {
+    margin-bottom: 1.5rem;
+}
+
+.perche-description {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.perche-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.pillar {
+    background: var(--bg-secondary);
+    border-radius: 1rem;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.pillar h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.pillar p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.perche-highlight {
+    display: flex;
+    align-items: stretch;
+}
+
+.highlight-card {
+    background: linear-gradient(135deg, rgba(30, 64, 175, 1) 0%, rgba(37, 99, 235, 1) 50%, rgba(59, 130, 246, 1) 100%);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    color: white;
+    box-shadow: var(--shadow-xl);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.highlight-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.highlight-card h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.highlight-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.highlight-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.highlight-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.5rem;
+}
+
+.highlight-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #bbf7d0;
+    font-weight: 700;
+}
+
+.highlight-card .btn-primary {
+    margin-top: 0.5rem;
+    width: 100%;
+    text-align: center;
+}
+
 .servizi-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -889,21 +1003,35 @@ section {
 @media (max-width: 768px) {
     .reviews-carousel {
         flex-direction: row;
+        justify-content: flex-start;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-padding: 1.5rem;
+        padding-bottom: 0.5rem;
     }
 
     .review-card {
-        max-width: 320px;
+        flex: 0 0 85%;
+        max-width: none;
+        aspect-ratio: 1 / 1;
+        height: auto;
+        scroll-snap-align: center;
     }
 }
 
 @media (max-width: 480px) {
     .reviews-carousel {
         flex-direction: row;
+        justify-content: flex-start;
+        gap: 1.5rem;
     }
 
     .review-card {
-        max-width: 280px;
+        flex: 0 0 90%;
+        max-width: none;
         padding: 1.5rem;
+        aspect-ratio: 1 / 1;
     }
 }
 
@@ -1357,7 +1485,8 @@ section {
     }
 
     .chi-siamo-content,
-    .contatti-content {
+    .contatti-content,
+    .perche-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
