@@ -1654,24 +1654,18 @@ section {
         grid-template-columns: 1fr;
     }
 
-    /* Perché Sceglierci - Pillar in orizzontale su mobile */
+    /* Perché Sceglierci - Pillar in verticale su mobile */
     .perche-pillars {
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
-        overflow-x: auto;
-        overflow-y: visible;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 0.5rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
         width: 100%;
-        -webkit-overflow-scrolling: touch;
+        overflow: visible;
     }
 
     .perche-pillars .pillar {
-        min-width: 85%;
-        max-width: 85%;
-        scroll-snap-align: center;
-        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
         padding: 1.5rem 1.25rem;
         box-sizing: border-box;
         height: auto;
@@ -1772,8 +1766,8 @@ section {
     }
 
     .perche-pillars .pillar {
-        min-width: 80%;
-        max-width: 80%;
+        width: 100%;
+        max-width: 100%;
         padding: 1.25rem 1rem;
     }
 
