@@ -50,6 +50,8 @@ body {
     width: 100%;
     max-width: 100vw;
     position: relative;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .container {
@@ -58,6 +60,8 @@ body {
     padding: 0 20px;
     width: 100%;
     box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Navigation */
@@ -504,15 +508,17 @@ section {
     align-items: stretch;
 }
 
-.perche-text .section-title {
-    margin-bottom: 1.5rem;
-}
+    .perche-text .section-title {
+        margin-bottom: 1.5rem;
+    }
 
-.perche-description {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-    line-height: 1.8;
-}
+    .perche-description {
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+        line-height: 1.8;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
 
 .perche-pillars {
     display: grid;
@@ -527,6 +533,9 @@ section {
     padding: 1.25rem 1.5rem;
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .pillar h3 {
@@ -534,11 +543,17 @@ section {
     font-weight: 700;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.4;
 }
 
 .pillar p {
     font-size: 0.9rem;
     color: var(--text-secondary);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
 }
 
 .perche-highlight {
@@ -555,6 +570,8 @@ section {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .highlight-badge {
@@ -570,12 +587,17 @@ section {
 .highlight-card h3 {
     font-size: 1.5rem;
     font-weight: 800;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.3;
 }
 
 .highlight-card p {
     font-size: 0.95rem;
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.95);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .highlight-list {
@@ -619,7 +641,9 @@ section {
     box-shadow: var(--shadow-md);
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .servizio-card::before {
@@ -665,12 +689,17 @@ section {
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--text-primary);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.3;
 }
 
 .servizio-card p {
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
     line-height: 1.7;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .servizio-features {
@@ -918,6 +947,9 @@ section {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
 }
 
 .review-card.active {
@@ -941,6 +973,8 @@ section {
     color: var(--text-secondary);
     font-size: 0.95rem;
     line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .review-stars {
@@ -1016,7 +1050,23 @@ section {
         max-width: none;
         aspect-ratio: 1 / 1;
         height: auto;
+        min-height: auto;
         scroll-snap-align: center;
+        padding: 1.5rem;
+        overflow: visible;
+    }
+
+    .review-text {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .review-name {
+        font-size: 0.95rem;
+    }
+
+    .review-role {
+        font-size: 0.8rem;
     }
 }
 
@@ -1032,6 +1082,13 @@ section {
         max-width: none;
         padding: 1.5rem;
         aspect-ratio: 1 / 1;
+        min-height: auto;
+        overflow: visible;
+    }
+
+    .review-text {
+        font-size: 0.85rem;
+        line-height: 1.5;
     }
 }
 
@@ -1491,6 +1548,19 @@ section {
         gap: 2rem;
     }
 
+    .perche-text {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .perche-description {
+        width: 100%;
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
     .contatti-content {
         padding: 0;
     }
@@ -1590,17 +1660,32 @@ section {
         flex-direction: row;
         gap: 1rem;
         overflow-x: auto;
-        overflow-y: hidden;
+        overflow-y: visible;
         scroll-snap-type: x mandatory;
         padding-bottom: 0.5rem;
         width: 100%;
+        -webkit-overflow-scrolling: touch;
     }
 
     .perche-pillars .pillar {
-        min-width: 90%;
-        max-width: 90%;
+        min-width: 85%;
+        max-width: 85%;
         scroll-snap-align: center;
         flex-shrink: 0;
+        padding: 1.5rem 1.25rem;
+        box-sizing: border-box;
+        height: auto;
+        min-height: fit-content;
+    }
+
+    .perche-pillars .pillar h3 {
+        font-size: 1.1rem;
+        line-height: 1.3;
+    }
+
+    .perche-pillars .pillar p {
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
 
     .stats-grid {
@@ -1630,6 +1715,15 @@ section {
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    section {
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
 
     .navbar .container {
@@ -1677,8 +1771,47 @@ section {
         gap: 1.5rem;
     }
 
+    .perche-pillars .pillar {
+        min-width: 80%;
+        max-width: 80%;
+        padding: 1.25rem 1rem;
+    }
+
+    .perche-pillars .pillar h3 {
+        font-size: 1rem;
+    }
+
+    .perche-pillars .pillar p {
+        font-size: 0.85rem;
+    }
+
+    .highlight-card {
+        padding: 1.5rem;
+    }
+
+    .highlight-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .highlight-card p {
+        font-size: 0.9rem;
+    }
+
     .servizio-card {
         padding: 1.5rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .servizio-card h3 {
+        font-size: 1.3rem;
+        line-height: 1.3;
+    }
+
+    .servizio-card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
     
     .contact-form {
