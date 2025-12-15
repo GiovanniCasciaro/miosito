@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Instagram - GC Digital Designs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f0f0;
+            padding: 20px;
+        }
+
+        .instagram-post {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            z-index: 2;
+        }
+
+        .logo-container {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .brand-name {
+            color: white;
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .post-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 2;
+            gap: 30px;
+        }
+
+        .main-title {
+            color: white;
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            text-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .main-title .highlight {
+            background: linear-gradient(135deg, #ffffff 0%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 2rem;
+            font-weight: 500;
+            max-width: 800px;
+            line-height: 1.4;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+            margin-top: 40px;
+        }
+
+        .service-item {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-title {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .service-desc {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .cta-button {
+            background: white;
+            color: #1e40af;
+            padding: 20px 50px;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .contact-info {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .decorative-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            opacity: 0.1;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: white;
+        }
+
+        .circle-1 {
+            width: 400px;
+            height: 400px;
+            top: -100px;
+            right: -100px;
+        }
+
+        .circle-2 {
+            width: 300px;
+            height: 300px;
+            bottom: -50px;
+            left: -50px;
+        }
+
+        .circle-3 {
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 10%;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .instagram-post {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="instagram-post">
+        <div class="decorative-elements">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+        </div>
+
+        <div class="post-header">
+            <div class="logo-container">
+                <img src="media/gc-logo.jpeg" alt="GC Digital Designs">
+            </div>
+            <div class="brand-name">GC DIGITAL DESIGNS</div>
+        </div>
+
+        <div class="post-content">
+            <h1 class="main-title">
+                Trasformiamo le tue<br>
+                <span class="highlight">idee digitali</span><br>
+                in realtà
+            </h1>
+            <p class="subtitle">
+                Sviluppo web professionale e consulenza IT per far crescere la tua attività nel mondo digitale
+            </p>
+
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">💻</div>
+                    <div class="service-title">Sviluppo Web</div>
+                    <div class="service-desc">Siti moderni e responsive</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🛒</div>
+                    <div class="service-title">E-Commerce</div>
+                    <div class="service-desc">Piattaforme complete</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">⚡</div>
+                    <div class="service-title">Ottimizzazione</div>
+                    <div class="service-desc">Performance e SEO</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="post-footer">
+            <div class="contact-info">
+                📧 giovannicasciaro.dev@gmail.com<br>
+                📱 +39 320 899 5599
+            </div>
+            <a href="https://gc-digitaldesign.com" class="cta-button">Richiedi Preventivo</a>
+        </div>
+    </div>
+</body>
+</html>
+

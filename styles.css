@@ -776,6 +776,137 @@ section {
     font-size: 0.875rem;
 }
 
+/* Recensioni Section */
+.recensioni {
+    background: var(--bg-primary);
+}
+
+.reviews-carousel {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 2rem;
+    overflow: hidden;
+}
+
+.review-card {
+    max-width: 320px;
+    width: 100%;
+    background: white;
+    border-radius: 1rem;
+    padding: 1.75rem;
+    box-shadow: var(--shadow-md);
+    opacity: 0.4;
+    transform: scale(0.9) translateY(10px);
+    transition: all 0.4s ease;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.review-card.active {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(37, 99, 235, 0.4);
+}
+
+.review-badge {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    background: var(--gradient-1);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.review-text {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.review-stars {
+    display: flex;
+    gap: 0.15rem;
+    color: #facc15;
+    font-size: 0.9rem;
+}
+
+.review-author {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.review-name {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.review-role {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.reviews-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.review-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    border: none;
+    background: rgba(148, 163, 184, 0.6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.review-dot.active {
+    width: 22px;
+    background: var(--primary-color);
+}
+
+@media (max-width: 968px) {
+    .reviews-carousel {
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    .review-card {
+        max-width: 360px;
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-carousel {
+        flex-direction: row;
+    }
+
+    .review-card {
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-carousel {
+        flex-direction: row;
+    }
+
+    .review-card {
+        max-width: 280px;
+        padding: 1.5rem;
+    }
+}
+
 /* Contatti Section */
 .contatti-content {
     display: grid;

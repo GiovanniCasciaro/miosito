@@ -307,6 +307,51 @@ const optimizedScrollHandler = debounce(() => {
 
 window.addEventListener('scroll', optimizedScrollHandler);
 
+// Recensioni Carousel
+const reviewCards = document.querySelectorAll('.review-card');
+const reviewDots = document.querySelectorAll('.review-dot');
+let currentReviewIndex = 0;
+let reviewInterval = null;
+
+function setActiveReview(index) {
+    if (!reviewCards.length) return;
+
+    reviewCards.forEach(card => card.classList.remove('active'));
+    reviewDots.forEach(dot => dot.classList.remove('active'));
+
+    const safeIndex = index % reviewCards.length;
+    currentReviewIndex = safeIndex;
+
+    const activeCard = document.querySelector(`.review-card[data-index="${safeIndex}"]`);
+    const activeDot = document.querySelector(`.review-dot[data-index="${safeIndex}"]`);
+
+    if (activeCard) activeCard.classList.add('active');
+    if (activeDot) activeDot.classList.add('active');
+}
+
+function startReviewCarousel() {
+    if (!reviewCards.length) return;
+
+    if (reviewInterval) clearInterval(reviewInterval);
+
+    reviewInterval = setInterval(() => {
+        setActiveReview(currentReviewIndex + 1);
+    }, 6000);
+}
+
+if (reviewCards.length) {
+    setActiveReview(0);
+    startReviewCarousel();
+
+    reviewDots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const index = parseInt(dot.getAttribute('data-index'));
+            setActiveReview(index);
+            startReviewCarousel();
+        });
+    });
+}
+
 // Back to Top Button
 const backToTopButton = document.getElementById('backToTop');
 
