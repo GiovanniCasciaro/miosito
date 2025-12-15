@@ -319,11 +319,21 @@ function scrollActiveReviewIntoView(activeCard) {
 
     // Solo in modalità responsive/mobile ha senso forzare lo scroll
     if (window.innerWidth <= 768) {
-        activeCard.scrollIntoView({
-            behavior: 'smooth',
-            inline: 'center',
-            block: 'nearest'
-        });
+        const carouselRect = reviewsCarousel.getBoundingClientRect();
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+        // Scorri la card in vista SOLO se il carosello è già visibile a schermo,
+        // per evitare che l'utente venga portato automaticamente in fondo pagina.
+        const isCarouselVisible =
+            carouselRect.top < viewportHeight && carouselRect.bottom > 0;
+
+        if (isCarouselVisible) {
+            activeCard.scrollIntoView({
+                behavior: 'smooth',
+                inline: 'center',
+                block: 'nearest'
+            });
+        }
     }
 }
 

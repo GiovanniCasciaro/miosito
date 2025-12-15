@@ -1593,11 +1593,13 @@ section {
         overflow-y: hidden;
         scroll-snap-type: x mandatory;
         padding-bottom: 0.5rem;
+        width: 100%;
     }
 
     .perche-pillars .pillar {
-        min-width: 80%;
-        scroll-snap-align: start;
+        min-width: 90%;
+        max-width: 90%;
+        scroll-snap-align: center;
         flex-shrink: 0;
     }
 
