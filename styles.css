@@ -870,6 +870,21 @@ section {
     overflow: hidden;
 }
 
+.portfolio-item:nth-child(1) .portfolio-image {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
 .portfolio-item:nth-child(2) .portfolio-image {
     background: var(--gradient-2);
 }
@@ -908,6 +923,193 @@ section {
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
     font-weight: 500;
+}
+
+.portfolio-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.9) 0%, rgba(37, 99, 235, 0.85) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-content {
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.95) 0%, rgba(37, 99, 235, 0.9) 100%);
+}
+
+.portfolio-content h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+}
+
+.portfolio-description {
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    font-size: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.portfolio-btn {
+    margin-top: 0.5rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.portfolio-btn-mobile {
+    display: none;
+    margin-top: 1rem;
+    text-decoration: none;
+}
+
+/* Portfolio Modal */
+body.modal-open {
+    overflow: hidden;
+}
+
+.portfolio-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.portfolio-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.portfolio-modal-content {
+    position: relative;
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-xl);
+    z-index: 10001;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-modal.active .portfolio-modal-content {
+    transform: scale(1);
+}
+
+.portfolio-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: var(--bg-secondary);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10002;
+}
+
+.portfolio-modal-close:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: rotate(90deg);
+}
+
+.portfolio-modal-close svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+}
+
+.portfolio-modal-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    padding-right: 3rem;
+}
+
+.portfolio-modal-description {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.portfolio-modal-description p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.portfolio-modal-description ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.portfolio-modal-description li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 1rem;
+}
+
+.portfolio-modal-description li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.portfolio-modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.portfolio-modal-actions .btn {
+    width: 100%;
+    text-align: center;
 }
 
 .portfolio-tag {
@@ -1652,6 +1854,64 @@ section {
     .servizi-grid,
     .portfolio-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Portfolio Mobile - Assicura visibilità */
+    .portfolio-item {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 250px;
+        aspect-ratio: auto;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .portfolio-image {
+        min-height: 250px;
+        width: 100% !important;
+        display: block !important;
+    }
+
+    /* Portfolio Mobile - Nascondi descrizione e bottone principale */
+    .portfolio-description,
+    .portfolio-btn {
+        display: none !important;
+    }
+
+    .portfolio-btn-mobile {
+        display: inline-block !important;
+    }
+
+    .portfolio-content {
+        padding: 1.5rem;
+        min-height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .portfolio-content h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Portfolio Modal Mobile */
+    .portfolio-modal-content {
+        padding: 1.5rem;
+        max-height: 85vh;
+    }
+
+    .portfolio-modal-title {
+        font-size: 1.5rem;
+        padding-right: 2.5rem;
+    }
+
+    .portfolio-modal-description p,
+    .portfolio-modal-description li {
+        font-size: 0.95rem;
     }
 
     /* Perché Sceglierci - Pillar in verticale su mobile */

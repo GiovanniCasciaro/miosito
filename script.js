@@ -412,3 +412,53 @@ if (backToTopButton) {
     });
 }
 
+// Portfolio Modal
+const portfolioModal = document.getElementById('portfolioModal');
+const portfolioBtnMobile = document.querySelector('.portfolio-btn-mobile');
+const portfolioModalClose = document.querySelector('.portfolio-modal-close');
+const portfolioModalCloseBtn = document.querySelector('.portfolio-modal-close-btn');
+
+function openPortfolioModal() {
+    if (portfolioModal) {
+        portfolioModal.classList.add('active');
+        document.body.classList.add('modal-open');
+    }
+}
+
+function closePortfolioModal() {
+    if (portfolioModal) {
+        portfolioModal.classList.remove('active');
+        document.body.classList.remove('modal-open');
+    }
+}
+
+if (portfolioBtnMobile) {
+    portfolioBtnMobile.addEventListener('click', (e) => {
+        e.preventDefault();
+        openPortfolioModal();
+    });
+}
+
+if (portfolioModalClose) {
+    portfolioModalClose.addEventListener('click', closePortfolioModal);
+}
+
+if (portfolioModalCloseBtn) {
+    portfolioModalCloseBtn.addEventListener('click', closePortfolioModal);
+}
+
+// Close modal when clicking on overlay
+if (portfolioModal) {
+    const modalOverlay = portfolioModal.querySelector('.portfolio-modal-overlay');
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', closePortfolioModal);
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && portfolioModal.classList.contains('active')) {
+            closePortfolioModal();
+        }
+    });
+}
+

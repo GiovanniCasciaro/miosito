@@ -8,11 +8,11 @@
     <meta http-equiv="Expires" content="0">
     <meta name="description" content="GC Digital Designs - Sviluppo Web Professionale e IT Consulting. Creiamo siti web moderni e soluzioni IT su misura per la tua azienda.">
     <title>GC Digital Designs - Web Development & IT Consulting</title>
-    <link rel="icon" type="image/jpeg" href="/media/gc-logo.jpeg">
-    <link rel="shortcut icon" type="image/jpeg" href="/media/gc-logo.jpeg">
-    <link rel="apple-touch-icon" sizes="180x180" href="/media/gc-logo.jpeg">
-    <link rel="preload" href="/styles.css" as="style">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/jpeg" href="media/gc-logo.jpeg">
+    <link rel="shortcut icon" type="image/jpeg" href="media/gc-logo.jpeg">
+    <link rel="apple-touch-icon" sizes="180x180" href="media/gc-logo.jpeg">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
     <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-brand">
-                <img src="/media/gc-logo.jpeg" alt="GC Digital Designs" class="nav-logo">
+                <img src="media/gc-logo.jpeg" alt="GC Digital Designs" class="nav-logo">
                 <span class="nav-brand-text">GC DIGITAL DESIGN</span>
             </div>
             <ul class="nav-menu" id="navMenu">
@@ -265,6 +265,23 @@
                 <p class="section-description">Esempi del nostro lavoro</p>
             </div>
             <div class="portfolio-grid">
+                <div class="portfolio-item" data-aos="zoom-in">
+                    <div class="portfolio-image">
+                        <div class="portfolio-content">
+                            <h3>Portale Prenotazioni Ristorante</h3>
+                            <p class="portfolio-description">
+                                Realizzato portale prenotazioni per ristorante Chiostro degli scolopi. <br>
+                                Integrazione di sistema di prenotazioni con: 
+                                Excel per la gestione delle prenotazioni, 
+                                Email di conferma e cancellazione delle prenotazioni, 
+                                Email di notifica per il ristorante e cliente,   
+                                Portale admin per la gestione delle sale e dei tavoli in tempo reale
+                            </p>
+                            <a href="https://prenotazionescolopi.netlify.app/" target="_blank" class="btn btn-primary portfolio-btn">Visita il Sito</a>
+                            <button class="btn btn-primary portfolio-btn-mobile">Visualizza Dettagli</button>
+                        </div>
+                    </div>
+                </div>
                 <div class="portfolio-item portfolio-coming-soon" data-aos="zoom-in">
                     <div class="portfolio-image">
                         <div class="portfolio-overlay">
@@ -460,7 +477,37 @@
         </svg>
     </button>
 
-    <script src="/script.js"></script>
+    <!-- Portfolio Modal -->
+    <div id="portfolioModal" class="portfolio-modal">
+        <div class="portfolio-modal-overlay"></div>
+        <div class="portfolio-modal-content">
+            <button class="portfolio-modal-close" aria-label="Chiudi modal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <h3 class="portfolio-modal-title">Portale Prenotazioni Ristorante</h3>
+            <div class="portfolio-modal-description">
+                <p>
+                    Realizzato portale prenotazioni per ristorante Chiostro degli scolopi. <br>
+                    Integrazione di sistema di prenotazioni con: 
+                </p>
+                <ul>
+                    <li>Excel per la gestione delle prenotazioni</li>
+                    <li>Email di conferma e cancellazione delle prenotazioni</li>
+                    <li>Email di notifica per il ristorante e cliente</li>
+                    <li>Portale admin per la gestione delle sale e dei tavoli in tempo reale</li>
+                </ul>
+            </div>
+            <div class="portfolio-modal-actions">
+                <a href="https://prenotazionescolopi.netlify.app/" target="_blank" class="btn btn-primary">Visita il Sito</a>
+                <button class="btn btn-secondary portfolio-modal-close-btn">Torna Indietro</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
 
